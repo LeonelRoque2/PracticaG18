@@ -4,6 +4,7 @@
  */
 package grupos.modelos;
 
+import autores.modelos.Autor;
 import java.util.ArrayList;
 
 /**
@@ -55,5 +56,14 @@ public class Grupo {
      public void mostrar(){
          System.out.println("Nombre del grupo: "+ nombre + "\tDescripcion: " + descripcion);
     }
+     
+     public void verMiembros(){
+         System.out.println(this.miembro);
+     }
+     
+     public void agregarMiembro(Autor autor, Rol rol){
+         
+     }
+     
      
 }
