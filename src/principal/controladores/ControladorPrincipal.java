@@ -5,6 +5,7 @@
 package principal.controladores;
 
 import autores.modelos.Alumno;
+import autores.modelos.Autor;
 import autores.modelos.Cargo;
 import autores.modelos.Profesor;
 import grupos.modelos.Grupo;
@@ -33,6 +34,8 @@ public class ControladorPrincipal {
         ArrayList <Grupo> arrayGrupo= new ArrayList<>();
         ArrayList <Publicacion> publicaciones = new ArrayList<>();
         ArrayList <MiembroEnGrupo> miembrosEnGrupo = new ArrayList<>();
+        ArrayList <Autor> arrayAutores = new ArrayList<>();
+        
         
         Profesor profesor1 = new Profesor(10, "Apellido10","Nombre10","Clave10",Cargo.ASOCIADO,miembrosEnGrupo);
         Profesor profesor2 = new Profesor(20, "Apellido20","Nombre20","Clave20",Cargo.ADJUNTO,miembrosEnGrupo);
@@ -44,25 +47,52 @@ public class ControladorPrincipal {
         Profesor profesor8 = new Profesor(40, "Apellido50","Nombre50","Clave50",Cargo.ADJUNTO,miembrosEnGrupo);
         
         
-        arrayProfesor.add(profesor1);
-        if(!arrayProfesor.contains(profesor2))
-        arrayProfesor.add(profesor2);
-        if(!arrayProfesor.contains(profesor3))
-        arrayProfesor.add(profesor3);
-        if(!arrayProfesor.contains(profesor4))
-        arrayProfesor.add(profesor4);
-        if(!arrayProfesor.contains(profesor5))
-        arrayProfesor.add(profesor5);
-        if(!arrayProfesor.contains(profesor6))
-        arrayProfesor.add(profesor6);
-        if(!arrayProfesor.contains(profesor7))
-        arrayProfesor.add(profesor7);
-        if(!arrayProfesor.contains(profesor8))
-        arrayProfesor.add(profesor8);
+            arrayAutores.add(profesor1);
+        if(!arrayAutores.contains(profesor2))
+            arrayAutores.add(profesor2);
+        if(!arrayAutores.contains(profesor3))
+            arrayAutores.add(profesor3);
+        if(!arrayAutores.contains(profesor4))
+            arrayAutores.add(profesor4);
+        if(!arrayAutores.contains(profesor5))
+            arrayAutores.add(profesor5);
+        if(!arrayAutores.contains(profesor6))
+            arrayAutores.add(profesor6);
+        if(!arrayAutores.contains(profesor7))
+            arrayAutores.add(profesor7);
+        if(!arrayAutores.contains(profesor8))
+            arrayAutores.add(profesor8);
         
-        for(Profesor p : arrayProfesor)
-            p.mostrar();
-
+//        for(Autor p : arrayAutores)
+//            p.mostrar();
+        Alumno alumno1 = new Alumno(1,"Apellido1","Nombre1","Clave1","1");
+        Alumno alumno2 = new Alumno(2,"Apellido2","Nombre2","Clave2","2");
+        Alumno alumno3 = new Alumno(3,"Apellido3","Nombre3","Clave3","3");
+        Alumno alumno4 = new Alumno(4,"Apellido4","Nombre4","Clave4","4");
+        Alumno alumno5 = new Alumno(5,"Apellido5","Nombre5","Clave5","5");
+        Alumno alumno6 = new Alumno(50,"Apellido5","Nombre5","Clave5","6");
+        Alumno alumno7 = new Alumno(6,"Apellido5","Nombre5","Clave5","2");
+        Alumno alumno8 = new Alumno(70,"Apellido5","Nombre5","Clave5","3");
+        
+        if(!arrayAutores.contains(alumno1))
+            arrayAutores.add(alumno1);
+        if(!arrayAutores.contains(alumno2))
+            arrayAutores.add(alumno2);
+        if(!arrayAutores.contains(alumno3))
+            arrayAutores.add(alumno3);
+        if(!arrayAutores.contains(alumno4))
+            arrayAutores.add(alumno4);
+        if(!arrayAutores.contains(alumno5))
+            arrayAutores.add(alumno5);
+        if(!arrayAutores.contains(alumno6))
+            arrayAutores.add(alumno6);
+        if(!arrayAutores.contains(alumno7))
+            arrayAutores.add(alumno7);
+        if(!arrayAutores.contains(alumno8))
+            arrayAutores.add(alumno8);
+    
+         for(Autor a: arrayAutores)
+        a.mostrar();
         
         Grupo grupo1 = new Grupo("G1","Grupo 1",miembrosEnGrupo);
         Grupo grupo2 = new Grupo("G2","Grupo 2",miembrosEnGrupo);
@@ -71,44 +101,53 @@ public class ControladorPrincipal {
         Grupo grupo5 = new Grupo("G5","Grupo 5",miembrosEnGrupo);
         
         MiembroEnGrupo miembrosEnGrupo1 = new MiembroEnGrupo(profesor4,grupo5,Rol.COLABORADOR);
-        MiembroEnGrupo miembrosEnGrupo2 = new MiembroEnGrupo(profesor1,grupo2,Rol.ADMINISTRADOR);
+        MiembroEnGrupo miembrosEnGrupo2 = new MiembroEnGrupo(profesor4,grupo2,Rol.ADMINISTRADOR);
         MiembroEnGrupo miembrosEnGrupo3 = new MiembroEnGrupo(profesor3,grupo2,Rol.ADMINISTRADOR);
-        MiembroEnGrupo miembrosEnGrupo4 = new MiembroEnGrupo(profesor5,grupo3,Rol.COLABORADOR);
+        MiembroEnGrupo miembrosEnGrupo4 = new MiembroEnGrupo(alumno4,grupo3,Rol.COLABORADOR);
         MiembroEnGrupo miembrosEnGrupo5 = new MiembroEnGrupo(profesor2,grupo2,Rol.COLABORADOR);
 //        
-        miembrosEnGrupo.add(miembrosEnGrupo1);
-        miembrosEnGrupo.add(miembrosEnGrupo2);
-        miembrosEnGrupo.add(miembrosEnGrupo3);
-        miembrosEnGrupo.add(miembrosEnGrupo4);
-        miembrosEnGrupo.add(miembrosEnGrupo5);
+            miembrosEnGrupo.add(miembrosEnGrupo1);
+        if(!miembrosEnGrupo.contains(miembrosEnGrupo2))
+            miembrosEnGrupo.add(miembrosEnGrupo2);
+        if(!miembrosEnGrupo.contains(miembrosEnGrupo3))
+            miembrosEnGrupo.add(miembrosEnGrupo3);
+        if(!miembrosEnGrupo.contains(miembrosEnGrupo4))
+            miembrosEnGrupo.add(miembrosEnGrupo4);
+        if(!miembrosEnGrupo.contains(miembrosEnGrupo5))
+            miembrosEnGrupo.add(miembrosEnGrupo5);
+        
+        System.out.println("Miembros en grupos");
+       for(MiembroEnGrupo meg: miembrosEnGrupo)
+            System.out.println(meg);
        
-        Alumno alumno1 = new Alumno(1,"Apellido1","Nombre1","Clave1","1");
-        Alumno alumno2 = new Alumno(2,"Apellido2","Nombre2","Clave2","2");
-        Alumno alumno3 = new Alumno(3,"Apellido3","Nombre3","Clave3","3");
-        Alumno alumno4 = new Alumno(4,"Apellido4","Nombre4","Clave4","4");
-        Alumno alumno5 = new Alumno(5,"Apellido5","Nombre5","Clave5","5");
-        Alumno alumno6 = new Alumno(2,"Apellido5","Nombre5","Clave5","5");
-        Alumno alumno7 = new Alumno(3,"Apellido5","Nombre5","Clave5","5");
-        Alumno alumno8 = new Alumno(7,"Apellido5","Nombre5","Clave5","5");
-        
-        arrayAlumno.add(alumno1);
-        if(!arrayAlumno.contains(alumno2))
-        arrayAlumno.add(alumno2);
-        if(!arrayAlumno.contains(alumno3))
-        arrayAlumno.add(alumno3);
-        if(!arrayAlumno.contains(alumno4))
-        arrayAlumno.add(alumno4);
-        if(!arrayAlumno.contains(alumno5))
-        arrayAlumno.add(alumno5);
-        if(!arrayAlumno.contains(alumno6))
-        arrayAlumno.add(alumno6);
-        if(!arrayAlumno.contains(alumno7))
-        arrayAlumno.add(alumno7);
-        if(!arrayAlumno.contains(alumno8))
-        arrayAlumno.add(alumno8);
-        
-         for(Alumno a: arrayAlumno)
-        a.mostrar();
+//        Alumno alumno1 = new Alumno(1,"Apellido1","Nombre1","Clave1","1");
+//        Alumno alumno2 = new Alumno(2,"Apellido2","Nombre2","Clave2","2");
+//        Alumno alumno3 = new Alumno(3,"Apellido3","Nombre3","Clave3","3");
+//        Alumno alumno4 = new Alumno(4,"Apellido4","Nombre4","Clave4","4");
+//        Alumno alumno5 = new Alumno(5,"Apellido5","Nombre5","Clave5","5");
+//        Alumno alumno6 = new Alumno(50,"Apellido5","Nombre5","Clave5","6");
+//        Alumno alumno7 = new Alumno(6,"Apellido5","Nombre5","Clave5","2");
+//        Alumno alumno8 = new Alumno(70,"Apellido5","Nombre5","Clave5","3");
+//        
+//        if(!arrayAutores.contains(alumno1))
+//            arrayAutores.add(alumno1);
+//        if(!arrayAutores.contains(alumno2))
+//            arrayAutores.add(alumno2);
+//        if(!arrayAutores.contains(alumno3))
+//            arrayAutores.add(alumno3);
+//        if(!arrayAutores.contains(alumno4))
+//            arrayAutores.add(alumno4);
+//        if(!arrayAutores.contains(alumno5))
+//            arrayAutores.add(alumno5);
+//        if(!arrayAutores.contains(alumno6))
+//            arrayAutores.add(alumno6);
+//        if(!arrayAutores.contains(alumno7))
+//            arrayAutores.add(alumno7);
+//        if(!arrayAutores.contains(alumno8))
+//            arrayAutores.add(alumno8);
+//    
+//         for(Autor a: arrayAutores)
+//        a.mostrar();
         
 //        Profesor profesor1 =new Profesor(10, "Apellido10","Nombre10","Clave10",Cargo.TITULAR,miembrosEnGrupo);
 //        Profesor profesor2 =new Profesor(20, "Apellido20","Nombre20","Clave20",Cargo.ADJUNTO);
@@ -141,8 +180,8 @@ public class ControladorPrincipal {
         if(!arrayIdioma.contains(idioma5))
         arrayIdioma.add(idioma5);
         
-        for(Idioma i: arrayIdioma)
-            System.out.println(i);
+//        for(Idioma i: arrayIdioma)
+//            System.out.println(i);
         
         Lugar lugar1= new Lugar("Lugar 1");
         Lugar lugar2= new Lugar("Lugar 2");
@@ -180,9 +219,9 @@ public class ControladorPrincipal {
         arrayPalabraClave.add(palabraClave5);
         
         
-        for(PalabraClave pc: arrayPalabraClave)
-            System.out.println(pc);
-//               
+//        for(PalabraClave pc: arrayPalabraClave)
+//            System.out.println(pc);
+////               
         Tipo tipo1=new Tipo("Tipo 1");
         Tipo tipo2=new Tipo("Tipo 2");
         Tipo tipo3=new Tipo("Tipo 3");
@@ -199,8 +238,8 @@ public class ControladorPrincipal {
         if(!arrayTipo.contains(tipo5))
         arrayTipo.add(tipo5);
         
-        for(Tipo t: arrayTipo)
-            System.out.println(t);
+//        for(Tipo t: arrayTipo)
+//            System.out.println(t);
         
 //        Grupo grupo1=new Grupo("G1","Grupo 1",miembrosEnGrupo);
 //        Grupo grupo2=new Grupo("G2","Grupo 2");
@@ -230,12 +269,12 @@ public class ControladorPrincipal {
 //        palabrasClaves3.add(palabraClave1);
 //        palabrasClaves3.add(palabraClave5);
 //        
-        Publicacion publicacion1 = new Publicacion("Título 5", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
-        Publicacion publicacion2 = new Publicacion("Título 3", arrayProfesor.get(0),LocalDate.of(2020,06,24), tipo1, idioma2, lugar5, palabrasClaves1, "Enlace 3", "Resumen 4",miembrosEnGrupo2);
-        Publicacion publicacion3 = new Publicacion("Título 5", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
-        Publicacion publicacion4 = new Publicacion("Título 5", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo3);
-        Publicacion publicacion5 = new Publicacion("Título 6", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
-         
+        Publicacion publicacion1 = new Publicacion("Título 5", arrayAutores.get(0),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
+        Publicacion publicacion2 = new Publicacion("Título 3", arrayAutores.get(5),LocalDate.of(2020,06,24), tipo1, idioma2, lugar5, palabrasClaves1, "Enlace 3", "Resumen 4",miembrosEnGrupo2);
+        Publicacion publicacion3 = new Publicacion("Título 5", alumno6,LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
+//        Publicacion publicacion4 = new Publicacion("Título 5", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo3);
+//        Publicacion publicacion5 = new Publicacion("Título 6", arrayProfesor.get(3),LocalDate.of(2020,06,24), tipo5, idioma3, lugar5, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1);
+          
 //        Publicacion publicacion1 = new Publicacion("Título 1", arrayProfesor.get(0),LocalDate.of(2020, 6, 24), tipo1, idioma1, lugar1, palabrasClaves1, "Enlace 5", "Resumen 5",miembrosEnGrupo1); 
 //        Publicacion publicacion1 = new Publicacion("Título 1", profesores.get(0),LocalDate.of(2020, 6, 24), tipo1, idioma1, lugar1, palabrasClaves1, "Enlace 1", "Resumen 1");
 //        Publicacion publicacion2 = new Publicacion("Título 2", arrayProfesor.get(1),fecha1, tipo2, idioma2, lugar2, palabrasClaves2, "Enlace 2", "Resumen 2");
@@ -246,12 +285,12 @@ public class ControladorPrincipal {
         publicaciones.add(publicacion1);
         if(!publicaciones.contains(publicacion2))
         publicaciones.add(publicacion2);
-        if(!publicaciones.contains(publicacion3))
-        publicaciones.add(publicacion3);
-        if(!publicaciones.contains(publicacion4))
-        publicaciones.add(publicacion4);
-        if(!publicaciones.contains(publicacion5))
-        publicaciones.add(publicacion5);
+//        if(!publicaciones.contains(publicacion3))
+//        publicaciones.add(publicacion3);
+//        if(!publicaciones.contains(publicacion4))
+//        publicaciones.add(publicacion4);
+//        if(!publicaciones.contains(publicacion5))
+//        publicaciones.add(publicacion5);
 //        
         System.out.println("\n----Publicaciones----\n");
         for(Publicacion p : publicaciones) {

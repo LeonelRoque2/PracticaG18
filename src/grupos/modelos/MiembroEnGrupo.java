@@ -4,31 +4,33 @@
  */
 package grupos.modelos;
 
+import autores.modelos.Autor;
 import autores.modelos.Profesor;
+import java.util.Objects;
 
 /**
  *
  * @author Administrador
  */
 public class MiembroEnGrupo {
-    private Profesor unProfesor;
+    private Autor unAutor;
     private Grupo unGrupo;
     private Rol unRol;
 
-    public MiembroEnGrupo(Profesor unProfesor, Grupo unGrupo, Rol unRol) {
-        this.unProfesor = unProfesor;
+    public MiembroEnGrupo(Autor unAutor, Grupo unGrupo, Rol unRol) {
+        this.unAutor = unAutor;
         this.unGrupo = unGrupo;
         this.unRol = unRol;
     }
 
-    public Profesor verUnProfesor() {
-        return unProfesor;
+    public Autor verUnAutor() {
+        return unAutor;
     }
 
-    public void asignarUnProfesor(Profesor unProfesor) {
-        this.unProfesor = unProfesor;
+    public void asignarUnAutor(Autor unAutor) {
+        this.unAutor = unAutor;
     }
-
+    
     public Grupo verUnGrupo() {
         return unGrupo;
     }
@@ -44,5 +46,40 @@ public class MiembroEnGrupo {
     public void asignarUnRol(Rol unRol) {
         this.unRol = unRol;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.unAutor);
+        hash = 43 * hash + Objects.hashCode(this.unGrupo);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MiembroEnGrupo other = (MiembroEnGrupo) obj;
+        if (!Objects.equals(this.unGrupo, other.unGrupo)) {
+            return false;
+        }
+        return Objects.equals(this.unAutor, other.unAutor);
+    }
+
+    @Override
+    public String toString() {
+        return "MiembroEnGrupo: " + "unAutor = " + this.verUnAutor().verApellidos() + " " + this.verUnAutor().verNombres()+ ", unGrupo=" + this.verUnGrupo().verNombre() + ", unRol=" + unRol + '}';
+    }
+    
+    
+    
+
     
 }

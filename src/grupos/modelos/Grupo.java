@@ -27,16 +27,13 @@ public class Grupo {
         this.miembro = miembro;
     }
 
-    public ArrayList<MiembroEnGrupo> getMiembro() {
+    public ArrayList<MiembroEnGrupo> verMiembro() {
         return miembro;
     }
 
-    public void setMiembro(ArrayList<MiembroEnGrupo> miembro) {
+    public void asignarMiembro(ArrayList<MiembroEnGrupo> miembro) {
         this.miembro = miembro;
     }
-    
-
-    
 
     public String verNombre() {
         return nombre;
@@ -53,6 +50,7 @@ public class Grupo {
     public void asignarDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
     
      public void mostrar(){
          System.out.println("Nombre del grupo: "+ nombre + "\tDescripcion: " + descripcion);

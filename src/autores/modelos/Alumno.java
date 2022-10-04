@@ -4,57 +4,20 @@
  */
 package autores.modelos;
 
+import java.util.Objects;
+
 /**
  *
  * @author estudiante
  */
-public class Alumno {
-    private int dni;
-    private String apellidos;
-    private String nombres;
-    private String clave;
+public class Alumno extends Autor{
     private String cx;
-
-    public Alumno(int dni, String apellidos, String nombres, String clave, String cx) {
-        this.dni = dni;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.clave = clave;
+    
+    public Alumno(int dni, String apellidos, String nombres, String clave,String cx) {
+        super(dni, apellidos, nombres, clave);
         this.cx = cx;
     }
-
-    public int verDni() {
-        return dni;
-    }
-
-    public void asignarDni(int dni) {
-        this.dni = dni;
-    }
-
-    public String verApellidos() {
-        return apellidos;
-    }
-
-    public void asignarApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String verNombres() {
-        return nombres;
-    }
-
-    public void asignarNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String verClave() {
-        return clave;
-    }
-
-    public void asignarClave(String clave) {
-        this.clave = clave;
-    }
-
+    
     public String verCx() {
         return cx;
     }
@@ -65,13 +28,15 @@ public class Alumno {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.dni;
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.cx);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if(getClass() != obj.getClass())     //REDEFINICION DE METODO EQUALS DE LA SUPERCLASE
+        return super.equals(obj);            //REDEFINICION DE METODO EQUALS DE LA SUPERCLASE
         if (this == obj) {
             return true;
         }
@@ -82,11 +47,21 @@ public class Alumno {
             return false;
         }
         final Alumno other = (Alumno) obj;
-        return this.dni == other.dni;
+        return Objects.equals(this.cx, other.cx);
     }
     
+    
+
+    
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+//    }
+//    
+   
     public void mostrar(){
-        System.out.println("Alumno: " +this.apellidos+ ", " +this.nombres+ "\ndni: " +this.dni);
+       super.mostrar();
+        System.out.println("Cx: "+cx);
     }
-     
+    
 }

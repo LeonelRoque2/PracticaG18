@@ -4,6 +4,7 @@
  */
 package publicaciones.modelos;
 
+import autores.modelos.Autor;
 import autores.modelos.Profesor;
 import grupos.modelos.MiembroEnGrupo;
 import idiomas.modelos.Idioma;
@@ -20,7 +21,7 @@ import tipos.modelos.Tipo;
  */
 public class Publicacion {
     private String titulo;
-    private Profesor profesor;
+    private Autor autor;
     private LocalDate fechaPublicacion;
     private Tipo unTipo;
     private Idioma unIdioma;
@@ -30,9 +31,9 @@ public class Publicacion {
     private String resumen;
     private MiembroEnGrupo unMiembroEnGrupo;
 
-    public Publicacion(String titulo, Profesor profesor, LocalDate fechaPublicacion, Tipo unTipo, Idioma unIdioma, Lugar unLugar, ArrayList<PalabraClave> palabrasClaves, String enlace, String resumen, MiembroEnGrupo unMiembroEnGrupo) {
+    public Publicacion(String titulo, Autor autor, LocalDate fechaPublicacion, Tipo unTipo, Idioma unIdioma, Lugar unLugar, ArrayList<PalabraClave> palabrasClaves, String enlace, String resumen, MiembroEnGrupo unMiembroEnGrupo) {
         this.titulo = titulo;
-        this.profesor = profesor;
+        this.autor = autor;
         this.fechaPublicacion = fechaPublicacion;
         this.unTipo = unTipo;
         this.unIdioma = unIdioma;
@@ -54,12 +55,12 @@ public class Publicacion {
         this.titulo = titulo;
     }
 
-    public Profesor verProfesor() {
-        return profesor;
+    public Autor verAutor() {
+        return autor;
     }
 
-    public void asignarProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void asignarAutor(Autor autor) {
+        this.autor = autor;
     }
 
     public LocalDate verFechaPublicacion() {
@@ -154,7 +155,8 @@ public class Publicacion {
     
     public void mostrar(){
         System.out.println("Título: " +this.titulo);
-        System.out.println("Autor: " + this.profesor.verApellidos() + ", " +this.profesor.verNombres());
+//        System.out.println("Autor: " + this.autor.verApellidos() + ", " +this.autor.verNombres());
+        autor.mostrar();
         System.out.println("Grupo: " +this.unMiembroEnGrupo.verUnGrupo().verDescripcion());
         System.out.println("Rol: "+this.unMiembroEnGrupo.verUnRol());
         System.out.println("Fecha de publicación: " + this.fechaPublicacion);
